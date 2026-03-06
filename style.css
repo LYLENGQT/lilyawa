@@ -1,5 +1,7 @@
 /* ===== Reset & Base ===== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -93,19 +95,43 @@ body {
 }
 
 @keyframes float1 {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-40px) rotate(10deg); }
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-40px) rotate(10deg);
+    }
 }
 
 @keyframes float2 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    33% { transform: translateX(30px) translateY(-20px); }
-    66% { transform: translateX(-20px) translateY(10px); }
+
+    0%,
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+
+    33% {
+        transform: translateX(30px) translateY(-20px);
+    }
+
+    66% {
+        transform: translateX(-20px) translateY(10px);
+    }
 }
 
 @keyframes float3 {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-30px) scale(1.05); }
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-30px) scale(1.05);
+    }
 }
 
 /* ===== Container ===== */
@@ -279,6 +305,7 @@ body {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -290,6 +317,7 @@ body {
         opacity: 0;
         transform: translateY(24px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -315,29 +343,250 @@ body {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 640px) {
+
+/* Tablet */
+@media (max-width: 768px) {
     .container {
-        padding: 40px 16px 60px;
+        padding: 48px 20px 64px;
+    }
+
+    .hero {
+        margin-bottom: 36px;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
     }
 
     .message-card {
-        border-radius: 18px;
+        padding: clamp(24px, 4vw, 40px);
+        border-radius: 20px;
+    }
+
+    .message-content p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        line-height: 1.8;
     }
 
     .highlight-block,
     .closing-block {
-        padding: 20px 22px;
+        padding: 24px 24px;
+        margin: 28px 0;
+    }
+
+    .highlight-block p {
+        font-size: 0.95rem;
+    }
+
+    .shape-1 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .shape-2 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .shape-3 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .shape-4 {
+        width: 120px;
+        height: 120px;
+    }
+
+    .shape-5 {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .container {
+        padding: 36px 16px 56px;
+    }
+
+    .hero {
+        margin-bottom: 28px;
     }
 
     .icon-wrapper {
         width: 60px;
         height: 60px;
         border-radius: 16px;
+        margin-bottom: 20px;
     }
 
     .icon {
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 0.88rem;
+    }
+
+    .divider {
+        margin-top: 24px;
+        gap: 12px;
+    }
+
+    .divider span {
+        width: 40px;
+    }
+
+    .message-card {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .message-content p {
+        font-size: 0.9rem;
+        margin-bottom: 18px;
+        line-height: 1.75;
+    }
+
+    .highlight-block {
+        margin: 24px 0;
+        padding: 20px 18px;
+        border-radius: 0 12px 12px 0;
+    }
+
+    .highlight-block p {
+        font-size: 0.9rem;
+    }
+
+    .closing-block {
+        margin-top: 24px;
+        padding: 20px 18px;
+        border-radius: 12px;
+    }
+
+    .footer {
+        margin-top: 36px;
+    }
+
+    .footer p {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+    }
+
+    .shape-1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .shape-2 {
+        width: 160px;
+        height: 160px;
+    }
+
+    .shape-3 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .shape-4 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .shape-5 {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .container {
+        padding: 28px 14px 48px;
+    }
+
+    .icon-wrapper {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        margin-bottom: 16px;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .subtitle {
+        font-size: 0.82rem;
+    }
+
+    .message-card {
+        padding: 20px 16px;
+        border-radius: 14px;
+    }
+
+    .message-content p {
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+        line-height: 1.7;
+    }
+
+    .highlight-block,
+    .closing-block {
+        padding: 16px 14px;
+    }
+
+    .highlight-block p,
+    .closing-block p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .container {
+        padding: 24px 12px 40px;
+    }
+
+    .hero h1 {
+        font-size: 1.25rem;
+    }
+
+    .message-card {
+        padding: 18px 14px;
+    }
+
+    .message-content p {
+        font-size: 0.82rem;
+        line-height: 1.65;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .shape {
+        animation-duration: 30s !important;
+    }
+
+    .fade-in {
+        transition-duration: 0.5s;
     }
 }
 
